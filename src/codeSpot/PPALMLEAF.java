@@ -10,7 +10,7 @@ public class PPALMLEAF {
 		{
 			if(encode.charAt(i)==' ')
 			{
-				if(i!=encode.length()-1 && i==j+1)
+				if(i!=encode.length()-2 && i==j+1)
 				{
 					result+=encode.charAt(i);
 					
@@ -23,6 +23,8 @@ public class PPALMLEAF {
 			}
 			
 		}
+		System.out.println("encode len"+encode.length());
+		System.out.println("Resukt len"+result.length());
 		//System.out.println(result);
 		return result;
 	}
@@ -30,6 +32,10 @@ public class PPALMLEAF {
 	public static String equalizer(String encode, int target) {
 		int spacearr[]=new int[100];
 		int j=0;
+		if(!encode.endsWith(" "))
+				encode+=" ";
+		for(int i=0;i<100;i++)
+			spacearr[i]=0;
 		for(int i=encode.length()-1;i>=0;i--)
 		{
 			if(encode.charAt(i)==' ') 
@@ -38,7 +44,9 @@ public class PPALMLEAF {
 				j++;
 			}
 		}
-		//System.out.println(spacearr);
+		for(int i=0;i<100;i++)
+			if(spacearr[i]!=0)
+				System.out.println(i+"i spaceat "+spacearr[i]);
 		
 		String newsent=new String();
 		newsent=encode.substring(spacearr[target]+1,encode.length());
@@ -128,11 +136,10 @@ public class PPALMLEAF {
 		System.out.println("No Space & SPL character: "+encoded1);
 		String decoded=lengthDivision(encoded1);
 		decoded=modulo(decoded);
-		System.out.println(" FINAL DECODED MESSAGE:"+decoded);
-		
-		
-		
+		System.out.println(" FINAL DECODED MESSAGE: "+decoded);
 	}
 
 }
+
+//The     oldest!!!      papers     Reveal#   in     Secrets...  
 
