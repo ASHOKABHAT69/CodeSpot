@@ -1,3 +1,5 @@
+This code doesn;t work for no spaces at end , with spaces>2 at end , refer PALMLEAf.java for 100% working of constraints!!
+
 package codeSpot;
 import java.util.Scanner;
 
